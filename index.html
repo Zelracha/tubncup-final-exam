@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Tub 'N Cup Cafe</title>
+    <style>
+        .cartContainer {
+            width: 350px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .cartList {
+            padding: 10px;
+        }
+        .cart-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .add-to-cart-btn {
+            transition: background-color 0.3s ease;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #f39c12;
+        }
+        .card {
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class="d-flex justify-content-between align-items-center bg-dark text-white p-3">
+        <img src="../icons/tnclogo.PNG" class="logo" alt="Tub 'N Cup Logo" style="width: 200px;">
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link text-warning">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link text-warning">Reserve a Schedule</a></li>
+                <li class="nav-item"><a href="#Order" class="nav-link text-warning"><b>Cafe Order</b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">MENU LIST</h1>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-warning" id="openCartBtn">
+                <img src="../menu/shopping-cart.png" alt="Cart" style="height: 15px; margin-right: 5px;"> Open Cart
+            </button>
+        </div>
+
+        <div class="cartContainer position-fixed top-0 end-0 p-4 bg-dark text-white" id="cartContainer" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <label id="myCart" class="bg-warning p-2 w-100 text-center">CART:</label>
+                <button class="btn btn-light" id="closeCartBtn">Close</button>
+            </div>
+            <div class="cartList" id="cartItems">            </div>
+            <div class="d-flex justify-content-between mt-3">
+                <button class="btn btn-secondary" id="closeCartBtn">Close</button>
+                <button class="btn btn-warning"><a href="checkout.html" class="text-dark">Check Out</a></button>
+            </div>
+        </div>
+
+        <!-- Product List -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4" id="productList">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../menu/b1.jpg" class="card-img-top" alt="Garlic Cream Cheese Bomb">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">CHEESE BOMB</h5>
+                        <p class="card-text">₱89</p>
+                        <button class="btn btn-warning add-to-cart-btn" data-product-id="b1">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../menu/b2.jpg" class="card-img-top" alt="Honey Butter Toast">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sandwich</h5>
+                        <p class="card-text">₱120</p>
+                        <button class="btn btn-warning add-to-cart-btn" data-product-id="b2">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../menu/b3.jpg" class="card-img-top" alt="Matcha Latte">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Pizza</h5>
+                        <p class="card-text">₱150</p>
+                        <button class="btn btn-warning add-to-cart-btn" data-product-id="b3">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <footer class="bg-warning text-center py-4 mt-5">
+        <h4>Pet Owners and Non-Pet Owners are welcome!</h4>
+        <div class="socials mt-3">
+            <p>Contact Us! <br> 0917 310 3119</p>
+            <a href="https://maps.app.goo.gl/JrBTdXpnmwcuUUSd8" class="text-dark"><img src="../icons/pin.png" class="me-2" alt="Pin" style="height: 30px;"></a>
+            <a href="https://www.facebook.com/tubncup" class="text-dark"><img src="../icons/facebook.png" class="me-2" alt="Facebook" style="height: 30px;"></a>
+            <a href="https://www.instagram.com/tubncup/" class="text-dark"><img src="../icons/instagram.png" class="me-2" alt="Instagram" style="height: 30px;"></a>
+            <a href="https://www.tiktok.com/@tubncup" class="text-dark"><img src="../icons/tiktok.png" class="me-2" alt="TikTok" style="height: 30px;"></a>
+        </div>
+    </footer>
+
+    <div class="footer bg-dark text-white py-2 mt-4 text-center">
+        <p>SERVING SINCE @2021</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cafeordering.js"></script>
+</body>
+
+</html>
